@@ -150,7 +150,7 @@ window.onload = function() {
 	  gamma = event.gamma;
 	  // Do stuff...
 	  
-	  document.getElementById("word1").innerHTML = 'alpha = ' + alpha + ', beta = ' + beta + ', gamma = '+gamma;
+	  document.getElementById("word1").innerHTML = 'alpha = ' + alpha + ',<br>beta = ' + beta + ',<br>gamma = '+gamma;
 	}
 	
 }
