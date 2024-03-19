@@ -145,9 +145,9 @@ window.onload = function() {
 	window.addEventListener('deviceorientation', handleOrientation);
 
 	function handleOrientation(event) {
-	  alpha = event.alpha;
-	  beta = event.beta;
-	  gamma = event.gamma;
+	  alpha = Math.round(event.alpha * 100) / 100;
+	  beta = Math.round(event.beta * 100) / 100;
+	  gamma = Math.round(event.gamma * 100) / 100;
 	  // Do stuff...
 	  
 	  document.getElementById("word1").innerHTML = 'alpha = ' + alpha + ',<br>beta = ' + beta + ',<br>gamma = '+gamma;
