@@ -142,6 +142,10 @@ window.onload = function() {
 
 	});
 	
+	curr_alpha = 0;
+	curr_beta = 0;
+	curr_gamma = 0;
+	
 	window.addEventListener('deviceorientation', handleOrientation);
 
 	function handleOrientation(event) {
@@ -150,7 +154,38 @@ window.onload = function() {
 	  gamma = Math.round(event.gamma * 100) / 100;
 	  // Do stuff...
 	  
+	  if ((curr_alpha===0) && (curr_beta===0) && (curr_gamma===0)){
+		console.log('base');
+		curr_alpha = alpha;
+		curr_beta = beta;
+		curr_gamma = gamma;
+	  }
+	  
+	  if ((curr_alpha-alpha)>5){
+		tilt_left=5
+	  }
+	  else if  ((curr_alpha-alpha)<-5){
+		tilt_left=-5
+	  }
+	  else{
+		tilt_left=curr_alpha-alpha
+	  }
+	  
+	  if ((curr_beta-beta)>5){
+		tilt_top=5
+	  }
+	  else if  ((curr_beta-beta)<-5){
+		tilt_top=-5
+	  }
+	  else{
+		tilt_top=curr_beta-beta
+	  }
+	  
+	  document.querySelector(".img2").style.setProperty('left', (tilt_left) +"px");
+	  document.querySelector(".img2").style.setProperty('top', (tilt_top) +"px");
+	  
 	  document.getElementById("word1").innerHTML = 'alpha = ' + alpha + ',<br>beta = ' + beta + ',<br>gamma = '+gamma;
+	  
 	}
 	
 }
