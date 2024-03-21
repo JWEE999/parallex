@@ -171,20 +171,20 @@ window.onload = function() {
 		tilt_left=curr_alpha-alpha
 	  }
 	  
-	  if ((curr_beta-beta)>5){
+	  if ((curr_gamma-gamma)>5){
 		tilt_top=5
 	  }
-	  else if  ((curr_beta-beta)<-5){
+	  else if  ((curr_gamma-gamma)<-5){
 		tilt_top=-5
 	  }
 	  else{
-		tilt_top=curr_beta-beta
+		tilt_top=curr_gamma-gamma
 	  }
 	  
 	  document.querySelector(".img2").style.setProperty('left', (tilt_left) +"px");
 	  document.querySelector(".img2").style.setProperty('top', (tilt_top) +"px");
 	  
-	  document.getElementById("word1").innerHTML = 'alpha = ' + alpha + ',<br>beta = ' + beta + ',<br>gamma = '+gamma;
+	  document.getElementById("word1").innerHTML = 'alpha = ' + alpha + ',<br>beta = ' + beta + ',<br>gamma = '+gamma + ' ,<br><br>curr_alpha = ' + curr_alpha + ' ,<br>curr_beta = ' + curr_beta + ' ,<br>curr_gamma = ' + curr_gamma;
 	  
 	}
 	
