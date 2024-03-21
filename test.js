@@ -161,24 +161,24 @@ window.onload = function() {
 		curr_gamma = gamma;
 	  }
 	  
-	  if ((curr_alpha-alpha)>5){
-		tilt_left=5
-	  }
-	  else if  ((curr_alpha-alpha)<-5){
-		tilt_left=-5
-	  }
-	  else{
-		tilt_left=curr_alpha-alpha
-	  }
-	  
-	  if ((curr_gamma-gamma)>5){
+	  if ((curr_beta-beta)>5){
 		tilt_top=5
 	  }
-	  else if  ((curr_gamma-gamma)<-5){
+	  else if  ((curr_beta-beta)<-5){
 		tilt_top=-5
 	  }
 	  else{
-		tilt_top=curr_gamma-gamma
+		tilt_top=curr_beta-beta
+	  }
+	  
+	  if ((curr_gamma-gamma)>5){
+		tilt_left=5
+	  }
+	  else if  ((curr_gamma-gamma)<-5){
+		tilt_left=-5
+	  }
+	  else{
+		tilt_left=curr_gamma-gamma
 	  }
 	  
 	  document.querySelector(".img2").style.setProperty('left', (tilt_left) +"px");
