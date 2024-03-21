@@ -161,24 +161,32 @@ window.onload = function() {
 		curr_gamma = gamma;
 	  }
 	  
-	  if ((curr_beta-beta)>5){
-		tilt_top=5
+	  if ((curr_beta-beta)>70){
+		beta=curr_beta-70;
 	  }
-	  else if  ((curr_beta-beta)<-5){
-		tilt_top=-5
-	  }
-	  else{
-		tilt_top=curr_beta-beta
+	  else if  ((curr_beta-beta)<-70){
+		beta=curr_beta+70;
 	  }
 	  
-	  if ((curr_gamma-gamma)>5){
-		tilt_left=5
-	  }
-	  else if  ((curr_gamma-gamma)<-5){
-		tilt_left=-5
+	  if ((curr_beta-beta)<0){
+	  	tilt_top= -Math.log10(beta-curr_beta+1)*2;
 	  }
 	  else{
-		tilt_left=curr_gamma-gamma
+	  	tilt_top= Math.log10(curr_beta-beta+1)*2;
+	  }
+	  
+	  if ((curr_gamma-gamma)>70){
+		gamma=curr_gamma-70;;
+	  }
+	  else if  ((curr_gamma-gamma)<-70){
+		gamma=curr_gamma+70;
+	  }
+
+	  if ((curr_gamma-gamma)<0){
+	  	tilt_left= -Math.log10(gamma-curr_gamma+1)*2;
+	  }
+	  else{
+	  	tilt_left= Math.log10(curr_gamma-gamma+1)*2;
 	  }
 	  
 	  document.querySelector(".img2").style.setProperty('left', (tilt_left) +"px");
