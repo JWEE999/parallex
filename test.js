@@ -191,6 +191,7 @@ window.onload = function() {
 	  
 	  document.querySelector(".img2").style.setProperty('left', (tilt_left) +"px");
 	  document.querySelector(".img2").style.setProperty('top', (tilt_top) +"px");
+	  document.querySelector(".img2").style.setProperty('transform', "rotateY(" + (tilt_left*5) +"deg) rotateX(" + (tilt_top*5) + "deg)");
 	  
 	  document.getElementById("word1").innerHTML = 'alpha = ' + alpha + ',<br>beta = ' + beta + ',<br>gamma = '+gamma + ' ,<br><br>curr_alpha = ' + curr_alpha + ' ,<br>curr_beta = ' + curr_beta + ' ,<br>curr_gamma = ' + curr_gamma;
 	  
