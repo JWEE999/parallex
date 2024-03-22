@@ -154,6 +154,8 @@ window.onload = function() {
 	  gamma = Math.round(event.gamma * 100) / 100;
 	  // Do stuff...
 	  
+	  value_abs_cap=35;
+	  
 	  if ((curr_alpha===0) && (curr_beta===0) && (curr_gamma===0)){
 		console.log('base');
 		curr_alpha = alpha;
@@ -161,11 +163,11 @@ window.onload = function() {
 		curr_gamma = gamma;
 	  }
 	  
-	  if ((curr_beta-beta)>70){
-		beta=curr_beta-70;
+	  if ((curr_beta-beta)>value_abs_cap){
+		beta=curr_beta-value_abs_cap;
 	  }
-	  else if  ((curr_beta-beta)<-70){
-		beta=curr_beta+70;
+	  else if  ((curr_beta-beta)<-value_abs_cap){
+		beta=curr_beta+value_abs_cap;
 	  }
 	  
 	  if ((curr_beta-beta)<0){
@@ -175,18 +177,18 @@ window.onload = function() {
 	  	tilt_top= Math.log10(curr_beta-beta+1)*2;
 	  }
 	  
-	  if ((curr_gamma-gamma)>70){
-		gamma=curr_gamma-70;;
+	  if ((curr_gamma-gamma)>value_abs_cap){
+		gamma=curr_gamma-value_abs_cap;;
 	  }
-	  else if  ((curr_gamma-gamma)<-70){
-		gamma=curr_gamma+70;
+	  else if  ((curr_gamma-gamma)<-value_abs_cap){
+		gamma=curr_gamma+value_abs_cap;
 	  }
 
 	  if ((curr_gamma-gamma)<0){
-	  	tilt_left= -Math.log10(gamma-curr_gamma+1)*2;
+	  	tilt_left= -Math.log10(gamma-curr_gamma+1)*1;
 	  }
 	  else{
-	  	tilt_left= Math.log10(curr_gamma-gamma+1)*2;
+	  	tilt_left= Math.log10(curr_gamma-gamma+1)*1;
 	  }
 	  
 	  document.querySelector(".img2").style.setProperty('left', (tilt_left) +"px");
