@@ -171,10 +171,10 @@ window.onload = function() {
 	  }
 	  
 	  if ((curr_beta-beta)<0){
-	  	tilt_top= -Math.log10(beta-curr_beta+1)*2;
+	  	tilt_top= -Math.log10(beta-curr_beta+1)*3;
 	  }
 	  else{
-	  	tilt_top= Math.log10(curr_beta-beta+1)*2;
+	  	tilt_top= Math.log10(curr_beta-beta+1)*3;
 	  }
 	  
 	  if ((curr_gamma-gamma)>value_abs_cap){
@@ -185,10 +185,10 @@ window.onload = function() {
 	  }
 
 	  if ((curr_gamma-gamma)<0){
-	  	tilt_left= -Math.log10(gamma-curr_gamma+1)*1;
+	  	tilt_left= -Math.log10(gamma-curr_gamma+1)*3;
 	  }
 	  else{
-	  	tilt_left= Math.log10(curr_gamma-gamma+1)*1;
+	  	tilt_left= Math.log10(curr_gamma-gamma+1)*3;
 	  }
 	  
 	  document.querySelector(".img2").style.setProperty('left', (tilt_left) +"px");
