@@ -171,10 +171,10 @@ window.onload = function() {
 	  }
 	  
 	  if ((curr_beta-beta)<0){
-	  	tilt_top= -Math.log10(beta-curr_beta+1)*3;
+	  	tilt_top= -Math.log10(beta-curr_beta+1);
 	  }
 	  else{
-	  	tilt_top= Math.log10(curr_beta-beta+1)*3;
+	  	tilt_top= Math.log10(curr_beta-beta+1);
 	  }
 	  
 	  if ((curr_gamma-gamma)>value_abs_cap){
@@ -185,14 +185,16 @@ window.onload = function() {
 	  }
 
 	  if ((curr_gamma-gamma)<0){
-	  	tilt_left= -Math.log10(gamma-curr_gamma+1)*3;
+	  	tilt_left= -Math.log10(gamma-curr_gamma+1);
 	  }
 	  else{
-	  	tilt_left= Math.log10(curr_gamma-gamma+1)*3;
+	  	tilt_left= Math.log10(curr_gamma-gamma+1);
 	  }
 	  
-	  document.querySelector(".img2").style.setProperty('left', (tilt_left) +"px");
-	  document.querySelector(".img2").style.setProperty('top', (tilt_top) +"px");
+	  document.querySelector(".img1").style.setProperty('left', (tilt_left*1.5) +"px");
+	  document.querySelector(".img1").style.setProperty('top', (tilt_top*1.5) +"px");
+	  document.querySelector(".img2").style.setProperty('left', (tilt_left*3) +"px");
+	  document.querySelector(".img2").style.setProperty('top', (tilt_top*3) +"px");
 	  //document.querySelector(".img2").style.setProperty('transform', "rotateY(" + (tilt_left*10) +"deg) rotateX(" + (tilt_top*10) + "deg)");
 	  
 	  document.getElementById("word1").innerHTML = 'alpha = ' + alpha + ',<br>beta = ' + beta + ',<br>gamma = '+gamma + ' ,<br><br>curr_alpha = ' + curr_alpha + ' ,<br>curr_beta = ' + curr_beta + ' ,<br>curr_gamma = ' + curr_gamma;
