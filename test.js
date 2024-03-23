@@ -191,8 +191,6 @@ window.onload = function() {
 	  	tilt_left= Math.log10(curr_gamma-gamma+1);
 	  }
 	  
-	  document.querySelector(".img1").style.setProperty('left', (tilt_left*1.5) +"px");
-	  document.querySelector(".img1").style.setProperty('top', (tilt_top*1.5) +"px");
 	  document.querySelector(".img2").style.setProperty('left', (tilt_left*3) +"px");
 	  document.querySelector(".img2").style.setProperty('top', (tilt_top*3) +"px");
 	  //document.querySelector(".img2").style.setProperty('transform', "rotateY(" + (tilt_left*10) +"deg) rotateX(" + (tilt_top*10) + "deg)");
